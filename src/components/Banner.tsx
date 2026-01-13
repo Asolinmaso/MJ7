@@ -16,15 +16,15 @@ export default function Banner() {
 
       {/* Gradient Overlays */}
       <div
-        className="absolute inset-0 w-full h-full"
-        style={{
-          background: `
-            linear-gradient(360deg, rgba(0, 0, 0, 0.39) 18.27%, rgba(0, 0, 0, 0) 100%),
-            linear-gradient(360deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.94) 81.73%),
-            linear-gradient(0deg, rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.52))
-          `,
-        }}
-      />
+  className="absolute inset-0 w-full h-full"
+  style={{
+    background: `
+      linear-gradient(360deg, rgba(0, 0, 0, 0.20) 18.27%, rgba(0, 0, 0, 0) 100%),
+      linear-gradient(360deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.45) 81.73%),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25))
+    `,
+  }}
+/>
     </section>
   );
 }

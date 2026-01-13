@@ -7,7 +7,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full h-[120px] bg-black z-50">
       {/* Main container matching Figma Frame 2 */}
-      <div className="w-full max-w-[1440px] h-full mx-auto px-[214px] flex flex-row justify-between items-center relative">
+      <div className="w-full max-w-[1440px] h-full mx-auto pl-[90px] pr-[100px] flex flex-row justify-between items-center relative">
         {/* Group 1 - Logo */}
         <div className="w-[142.93px] h-[94px] flex-shrink-0 relative top-[13px]">
           <Link href="/" className="block w-full h-full">
