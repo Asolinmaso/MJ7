@@ -78,7 +78,7 @@ export default function ContactUs() {
   };
 
   return (
-    <section className="w-full bg-black py-24 px-6 max-[1439px]:px-[120px] min-[1440px]:px-[152px]">
+    <section id="contact" className="w-full bg-black py-24 px-6 max-[1439px]:px-[120px] min-[1440px]:px-[152px]">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20">
         {/* LEFT CONTENT */}
         <div>
@@ -86,11 +86,11 @@ export default function ContactUs() {
             <span className="text-red-600">CONTACT</span>
             <br />
             <span className="text-white flex items-center gap-4">
-              US <span className="w-28 h-[5px] bg-white inline-block" />
+              US <span className="w-[260px] h-[5px] bg-white inline-block" />
             </span>
           </h2>
 
-          <p className="text-white-400 text-[24px]max-w-md mb-12">
+          <p className="text-white text-[24px]max-w-md mb-12">
             We specialize in producing high-quality films, digital content, and
             visual narratives that blend strong concepts with striking
             aesthetics.
