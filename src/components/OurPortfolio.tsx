@@ -4,13 +4,13 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const posters = [
-  "/movie_posters/movie_1.png",
+  "/movie_posters/movie1.jpg",
+  "/movie_posters/movie2.jpg",
+  "/movie_posters/movie3.jpg",
+  "/movie_posters/movie4.jpg",
+  "/movie_posters/movie5.png",
+  "/movie_posters/movie6.jpg",
   "/movie_posters/movie_2.jpg",
-  "/movie_posters/movie_3.jpg",
-  "/movie_posters/movie_4.jpg",
-  "/movie_posters/movie_5.jpg",
-  "/movie_posters/movie_2.jpg",
-  "/movie_posters/movie_3.jpg",
 ];
 
 const STACK_BASE_X = -120;
@@ -46,7 +46,7 @@ export default function OurPortfolio() {
     >
       {/* Heading */}
       <div className="text-center px-[10px] md:mb-12">
-        <h2 className="text-[38px] xxs1:text-[32px] xxs:text-[38px] xs1:text-[44px] md:text-[64px] lg:text-[96px] font-[900]">
+        <h2 className="text-[38px] xxs1:text-[32px] xxs:text-[38px] xs1:text-[44px] md:text-[64px] lg:text-[100px] font-[900]">
           <span className="text-white">OUR </span>
           <span className="text-red-600">PORTFOLIO</span>
         </h2>

@@ -1,9 +1,34 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
 export default function Footer() {
+  const footerRef = useRef<HTMLElement | null>(null);
+const [playAnimation, setPlayAnimation] = useState(false);
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        // toggle to force re-render (restart animation)
+        setPlayAnimation(false);
+        requestAnimationFrame(() => setPlayAnimation(true));
+      }
+    },
+    {
+      threshold: 0.2, // play when 20% visible
+    }
+  );
+
+  if (footerRef.current) {
+    observer.observe(footerRef.current);
+  }
+
+  return () => observer.disconnect();
+}, []);
+
   return (
-    <footer className="w-full bg-black text-white relative overflow-hidden">
+    <footer ref={footerRef} className="w-full bg-black text-white relative overflow-hidden">
       {/* FILM STRIP (FULL WIDTH) */}
       <div className="w-full overflow-hidden mb-10">
         <svg
@@ -21,7 +46,7 @@ export default function Footer() {
               type="rotate"
               values="-75 0 160; 0 0 160; 0 0 160; -75 0 160"
               keyTimes="0;0.06;0.92;1"
-              dur="5s"
+              dur="2s"
               repeatCount="indefinite"
               calcMode="spline"
               keySplines="
@@ -36,7 +61,7 @@ export default function Footer() {
               type="translate"
               values="0 -14; 0 10; 0 10; 0 -14"
               keyTimes="0;0.06;0.92;1"
-              dur="5s"
+              dur="2s"
               repeatCount="indefinite"
               additive="sum"
             />
@@ -183,7 +208,7 @@ export default function Footer() {
         className="
       max-w-[1440px] mx-auto
       px-6 py-16
-      md:pl-30 pr-15
+      md:pl-30 md:pr-25
       grid grid-cols-1 md:grid-cols-3 gap-22
 
       /* 📟 TABLET ONLY (768–1023px) */
@@ -197,11 +222,11 @@ export default function Footer() {
         {/* LEFT : LOGO + ABOUT */}
         <div className="space-y-6">
           <Link href="#hero">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 mb-[10px]">
             <Image
               src="/navbar_logo.png"
               alt="MJ7 Logo"
-              width={100}
+              width={130}
               height={100}
             />
           </div>
@@ -219,6 +244,7 @@ export default function Footer() {
           xs:text-[17px]
           xs1:text-[18px]
           md:text-[19px]
+          md:pl-[20px]
           lg:text-[20px]
         "
           >
@@ -377,7 +403,7 @@ export default function Footer() {
                   />{" "}
                 </svg>
               </span>
-              <span className="leading-relaxed">
+              <span className="leading-relaxed md:max-w-[250px]">
                 Corporate Office: <br />
                 No.18, Velan Avenue, Rice Mill Road, Kandigai, Chennai – 600127
               </span>
@@ -392,7 +418,7 @@ export default function Footer() {
       {/* COPYRIGHT */}
       <div
         className="
-      text-center text-red-600 py-6
+      text-center text-red-600 py-6 px-6
       text-[16px]
 
       /* 📟 tablet */
@@ -405,7 +431,7 @@ export default function Footer() {
       lg:text-[16px]
     "
       >
-        © {new Date().getFullYear()} MJ7creationsPvtLtd. All rights reserved.{" "}
+        © {new Date().getFullYear()} MJ7 CINE CREATORS PVT.LTD. All rights reserved.{" "}
         <span className="text-red-600">Designed & Developed By Manvian</span>
       </div>
     </footer>
