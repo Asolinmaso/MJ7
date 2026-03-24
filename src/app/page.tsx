@@ -9,6 +9,8 @@ import ContactUs from "@/components/ContactUs";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import Stats from "@/components/Stats";
+import Career from "@/components/Career";
+import CollaborationSection from "@/components/CollaborationSection";
 
 
 export default function Home() {
@@ -24,10 +26,12 @@ export default function Home() {
         {/* Banner Section */}
         <Banner />
 
-        <ProjectsScroller/>
+        {/* <ProjectsScroller/> */}
         <OurTeams />
-        <ScheduleForm />
-        <OurPortfolio/>
+        {/* <ScheduleForm />
+        <OurPortfolio/> */}
+        <Career/>
+        <CollaborationSection/>
         <ContactUs/>
         <Footer/>
       </main>
