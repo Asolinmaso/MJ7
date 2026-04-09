@@ -30,6 +30,7 @@ export default function Navbar() {
               alt="MJ7 Logo"
               fill
               className="object-contain"
+              sizes="(max-width: 1024px) 80px, 143px"
               priority
             />
           </Link>

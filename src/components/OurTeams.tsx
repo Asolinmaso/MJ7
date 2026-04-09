@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import TeamCard from "./TeamCard";
 
 type TeamMember = {
@@ -13,80 +12,21 @@ const teamMembers: TeamMember[] = [
   {
     name: "Dr.Dheeran J.W",
     role: "Director, Founder & Actor",
-    image: "/team/dinesh.png",
+    image: "/team/Dheeran.png",
   },
   {
     name: "Rakesh Kumawat",
     role: "Director",
-    image: "/team/dinesh.png",
+    image: "/team/Rakesh.png",
   },
   {
     name: "Dir.Latha Maniyarasu",
     role: "Creative Head Director",
-    image: "/team/female_1.png",
+    image: "/team/Catherine.png",
   },
-  {
-    name: "Mr.Madesh S",
-    role: "Executive Producer & Financial Administrator",
-    image: "/team/dinesh.png",
-  },
-  {
-    name: "Rup Kaur Sidhu",
-    role: "Production Supervisor",
-    image: "/team/female_2.png",
-  },
-  
 ];
 
 export default function OurTeams() {
-  const trackRef = useRef<HTMLDivElement>(null);
-  const animationRef = useRef<number>(0);
-  const positionRef = useRef(0);
-
-  useEffect(() => {
-  const track = trackRef.current;
-  if (!track) return;
-
-  const speed = 0.6;
-  const singleSetWidth = track.scrollWidth / 2;
-
-  let isPaused = false;
-
-  const animate = () => {
-    if (!isPaused) {
-      positionRef.current -= speed;
-
-      if (Math.abs(positionRef.current) >= singleSetWidth) {
-        positionRef.current = 0;
-      }
-
-      track.style.transform = `translateX(${positionRef.current}px)`;
-    }
-
-    animationRef.current = requestAnimationFrame(animate);
-  };
-
-  animationRef.current = requestAnimationFrame(animate);
-
-  // Pause on hover
-  const handleMouseEnter = () => {
-    isPaused = true;
-  };
-
-  const handleMouseLeave = () => {
-    isPaused = false;
-  };
-
-  track.addEventListener("mouseenter", handleMouseEnter);
-  track.addEventListener("mouseleave", handleMouseLeave);
-
-  return () => {
-    cancelAnimationFrame(animationRef.current);
-    track.removeEventListener("mouseenter", handleMouseEnter);
-    track.removeEventListener("mouseleave", handleMouseLeave);
-  };
-}, []);
-
   return (
     <section
       id="team"
@@ -107,19 +47,17 @@ export default function OurTeams() {
         </p>
       </div>
 
-      {/* Infinite Scroll */}
-      <div className="relative overflow-hidden w-full mt-10">
-        <div ref={trackRef} className="flex w-max">
-          {[...teamMembers, ...teamMembers].map((member, index) => (
-            <div key={index} className="mx-6 flex-shrink-0">
-              <TeamCard
-                name={member.name}
-                role={member.role}
-                image={member.image}
-              />
-            </div>
-          ))}
-        </div>
+      {/* Grid Display for only 3 Team Members */}
+      <div className="w-full mt-10 max-w-[1200px] mx-auto flex flex-wrap justify-center gap-12 lg:gap-20">
+        {teamMembers.map((member, index) => (
+          <div key={index}>
+            <TeamCard
+              name={member.name}
+              role={member.role}
+              image={member.image}
+            />
+          </div>
+        ))}
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Banner from "@/components/Banner";
 import AboutUs from "@/components/AboutUs";
+import OurProjects from "@/components/OurProjects";
 import ProjectsScroller from "@/components/ProjectsScroller";
 import OurTeams from "@/components/OurTeams";
 import ScheduleForm from "@/components/ScheduleForm";
@@ -27,6 +28,7 @@ export default function Home() {
         <Banner />
 
         {/* <ProjectsScroller/> */}
+        <OurProjects />
         <OurTeams />
         {/* <ScheduleForm />
         <OurPortfolio/> */}

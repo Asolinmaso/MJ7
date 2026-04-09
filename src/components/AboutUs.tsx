@@ -50,6 +50,7 @@ export default function AboutUs() {
                 width={520}
                 height={520}
                 className="rounded-2xl shadow-2xl object-cover"
+                style={{ height: 'auto' }}
                 priority
               />
             </div>
@@ -127,6 +128,7 @@ export default function AboutUs() {
                 width={520}
                 height={520}
                 className="rounded-2xl shadow-2xl object-cover"
+                style={{ height: 'auto' }}
               />
             </div>
           </div>
