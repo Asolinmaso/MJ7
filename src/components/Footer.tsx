@@ -38,8 +38,7 @@ useEffect(() => {
         >
           <g
             clipPath="url(#clip0)"
-            transformbox="fill-box"
-            transformOrigin="0% 50%"
+            style={{ transformBox: "fill-box", transformOrigin: "0% 50%" }}
           >
             <animateTransform
               attributeName="transform"
