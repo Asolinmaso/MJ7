@@ -47,8 +47,10 @@ export default function Career() {
         <div className="flex flex-col">
           {jobs.map((job, index) => (
             <div key={index} className="w-full">
-              {/* Divider Above */}
-              <div className="w-full h-0 border-t border-[rgba(255,255,255,0.51)] mb-12"></div>
+              {/* Divider Above (only for subsequent items) */}
+              {index !== 0 && (
+                <div className="w-full h-0 border-t border-[rgba(255,255,255,0.51)] mb-12"></div>
+              )}
               
               <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 mb-16 relative">
                 <div className="flex-1">
