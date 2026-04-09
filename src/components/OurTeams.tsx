@@ -22,6 +22,11 @@ const teamMembers: TeamMember[] = [
   {
     name: "Dir.Latha Maniyarasu",
     role: "Creative Head Director",
+    image: "/team/Latha.png",
+  },
+  {
+    name: "Catherine",
+    role: "Producer",
     image: "/team/Catherine.png",
   },
 ];
@@ -47,17 +52,19 @@ export default function OurTeams() {
         </p>
       </div>
 
-      {/* Grid Display for only 3 Team Members */}
-      <div className="w-full mt-10 max-w-[1200px] mx-auto flex flex-wrap justify-center gap-12 lg:gap-20">
-        {teamMembers.map((member, index) => (
-          <div key={index}>
-            <TeamCard
-              name={member.name}
-              role={member.role}
-              image={member.image}
-            />
-          </div>
-        ))}
+      {/* Four images in one row */}
+      <div className="w-full mt-10 max-w-[1600px] mx-auto px-2 sm:px-4">
+        <div className="grid grid-cols-4 gap-2 sm:gap-4 md:gap-8 lg:gap-12">
+          {teamMembers.map((member) => (
+            <div key={member.name} className="min-w-0 flex justify-center">
+              <TeamCard
+                name={member.name}
+                role={member.role}
+                image={member.image}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

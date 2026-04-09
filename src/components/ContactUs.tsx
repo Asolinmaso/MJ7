@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
+import { getApiUrl } from "@/lib/getApiUrl";
 
 type FormData = {
   firstName: string;
@@ -101,7 +102,7 @@ export default function ContactUs() {
   location: form.location.trim(),
   message: form.message.trim(),
 };
-      await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/contact`, cleanedForm);
+      await axios.post(getApiUrl("/api/contact"), cleanedForm);
       setSuccess("Message sent successfully!");
       setForm({
         firstName: "",

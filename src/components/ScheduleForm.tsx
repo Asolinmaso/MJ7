@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRef } from "react";
 import axios from "axios";
+import { getApiUrl } from "@/lib/getApiUrl";
 
 type FormData = {
   firstName: string;
@@ -70,7 +71,7 @@ export default function ScheduleForm() {
     try {
       setLoading(true);
 
-      await axios.post( `${process.env.NEXT_PUBLIC_API_URL}/api/meeting`, {
+      await axios.post(getApiUrl("/api/meeting"), {
         firstName: form.firstName.trim(),
         lastName: form.lastName.trim(),
         email: form.email.trim(),

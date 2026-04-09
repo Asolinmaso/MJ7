@@ -10,12 +10,12 @@ type TeamCardProps = {
 
 export default function TeamCard({ name, image }: TeamCardProps) {
   return (
-    <div className="relative w-[280px] h-[400px] overflow-hidden rounded-[15px] flex items-center justify-center">
+    <div className="relative w-full max-w-[280px] aspect-[280/400] overflow-hidden rounded-[15px]">
       <Image
         src={image}
         alt={name}
-        width={280}
-        height={400}
+        fill
+        sizes="(max-width: 640px) 28vw, (max-width: 1024px) 22vw, 280px"
         className="object-contain"
         priority
       />
